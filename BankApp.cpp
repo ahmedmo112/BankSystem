@@ -48,9 +48,14 @@ void BankAcc::setClient(Client &c)
 
 string BankAcc::getAccountID()
 {
-    string name="salma to test, second time :)";
+    string name="salma to test :)";
     return accountID;
 }
+
+// void BankAcc::dummy()
+// {
+    
+// }
 
 double BankAcc::getBalance()
 {
@@ -348,6 +353,11 @@ void BankApp::deposit()
     vecAccounts[0]->getAccountID();
     cout << endl
     << "Deposit done" << endl;
+}
+
+void BankApp::dummyBankApp()
+{
+    listClients();
 }
 
 void BankApp::run()

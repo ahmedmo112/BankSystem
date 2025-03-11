@@ -33,6 +33,7 @@ public:
     Client *getClient();
     virtual bool withdraw(double amount);
     virtual bool deposit(double amount);
+    // void dummy();
 };
 
 #endif

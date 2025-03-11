@@ -65,6 +65,11 @@ TEST_F(BankAccTest, Deposit) {
     EXPECT_EQ(account.getBalance(), 100.0);
 }
 
+// // Test dummy method
+// TEST_F(BankAccTest, Dummy) {
+//     account.dummy();//dummy function
+// }
+
 // Test fixture for SavingsBankAcc class
 class SavingsBankAccTest : public ::testing::Test {
 protected:
@@ -154,6 +159,19 @@ TEST_F(BankAppTest, WithdrawOutputsCorrectlyNew) {
     EXPECT_EQ(buffer.str(), "Withdraw done\n");
 }
 
+//Test dummyBankApp() output
+TEST_F(BankAppTest, DummyBankAppOutputsCorrectly) {
+    std::stringstream buffer;
+    std::streambuf* prevcout = std::cout.rdbuf(buffer.rdbuf()); // Redirect std::cout
+
+    // Call method
+    bankApp.dummyBankApp();
+
+    std::cout.rdbuf(prevcout); // Restore std::cout
+
+    // Verify output
+    EXPECT_EQ(buffer.str(), "List of Clients and Accounts\n");
+}
 
 
 int main(int argc, char **argv) {
