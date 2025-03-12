@@ -17,8 +17,8 @@ TEST_F(BankAccTest, DefaultConstructor) {
 
 // Test parameterized constructor
 TEST_F(BankAccTest, ParameterizedConstructor) {
-    BankAcc account(1000.0);
-    EXPECT_EQ(account.getBalance(), 1000.0);
+    BankAcc account(10.0);
+    EXPECT_EQ(account.getBalance(), 10.0);
 }
 
 // Test setAccountID and getAccountID
@@ -185,6 +185,20 @@ TEST_F(BankAppTest, DepositOutputsCorrectly) {
 
     // Verify output
     EXPECT_EQ(buffer.str(), "Deposit done\n");
+}
+
+// Test addClient() output
+TEST_F(BankAppTest, AddClientOutputsCorrectly) {
+    std::stringstream buffer;
+    std::streambuf* prevcout = std::cout.rdbuf(buffer.rdbuf()); // Redirect std::cout
+
+    // Call method
+    bankApp.addClient();
+
+    std::cout.rdbuf(prevcout); // Restore std::cout
+
+    // Verify output
+    EXPECT_EQ(buffer.str(), "Add client\n");
 }
 
 

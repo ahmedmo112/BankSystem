@@ -48,7 +48,7 @@ void BankAcc::setClient(Client &c)
 
 string BankAcc::getAccountID()
 {
-    string name="dummy :)";
+    string name="dummy alooo:)";
     return accountID;
 }
 
@@ -200,76 +200,78 @@ int BankAcc::accountCount = 0;
 
 bool BankApp::addClient()
 {
-    string name;
-    string address;
-    string phone;
-    int accType;
-    double balance;
-    Client *c = new Client();
-    BankAcc *b = new BankAcc();
-    SavingsBankAcc *s = new SavingsBankAcc();
+    // string name;
+    // string address;
+    // string phone;
+    // int accType;
+    // double balance;
+    // Client *c = new Client();
+    // BankAcc *b = new BankAcc();
+    // SavingsBankAcc *s = new SavingsBankAcc();
 
-    BankAcc::accountCount++;
-    string accountID = "FCAI-" + to_string(BankAcc::accountCount);
+    // BankAcc::accountCount++;
+    // string accountID = "FCAI-" + to_string(BankAcc::accountCount);
 
-    cout << "Enter client name: ";
-    cin.ignore();
-    getline(cin, name);
-    c->setName(name);
-
-    cout << "Enter client address: ";
+    // cout << "Enter client name: ";
     // cin.ignore();
-    getline(cin, address);
-    c->setAddress(address);
+    // getline(cin, name);
+    // c->setName(name);
 
-    cout << "Enter client phone: ";
-    // cin.ignore();
-    getline(cin, phone);
-    c->setPhone(phone);
+    // cout << "Enter client address: ";
+    // // cin.ignore();
+    // getline(cin, address);
+    // c->setAddress(address);
 
-    cout << "What Type of Account Do You Like? (1) Basic (2) Saving => Type 1 or 2 : ";
-    cin >> accType;
+    // cout << "Enter client phone: ";
+    // // cin.ignore();
+    // getline(cin, phone);
+    // c->setPhone(phone);
 
-    if (accType == 1)
-    {
-        b->setType("Basic");
-        b->setAccountID(accountID);
-        cout << "Please Enter the Starting Balance : ";
-        cin >> balance;
-        while (b->setBalance(balance) == false)
-        {
-            cout << "you can't enter negative balance, please enter again : ";
-            cin >> balance;
-        }
-        c->setBankAccount(*b);
-        vecAccounts.push_back(b);
-        vecClients.push_back(c);
-    }
-    else if (accType == 2)
-    {
-        s->setType("Saving");
-        s->setAccountID(accountID);
-        cout << "Please Enter the Starting Balance : ";
-        cin >> balance;
-        while (s->setBalance(balance) == false)
-        {
-            cout << "Your starting balance must be greater than the minimum balance" << endl;
-            cout << "The minimum balance is " << s->getMinimumBalance() << endl;
-            cout << "Please Enter the Starting Balance : ";
-            cin >> balance;
-        }
-        c->setBankAccount(*s);
-        vecAccounts.push_back(s);
-        vecClients.push_back(c);
-    }
-    else
-    {
-        cout << "Invalid Type" << endl;
-        return false;
-    }
-    cout << "An account was created with ID " << vecAccounts[BankAcc::accountCount - 1]->getAccountID();
-    cout << " and Starting Balance " << vecAccounts[BankAcc::accountCount - 1]->getBalance() << endl;
-    return true;
+    // cout << "What Type of Account Do You Like? (1) Basic (2) Saving => Type 1 or 2 : ";
+    // cin >> accType;
+
+    // if (accType == 1)
+    // {
+    //     b->setType("Basic");
+    //     b->setAccountID(accountID);
+    //     cout << "Please Enter the Starting Balance : ";
+    //     cin >> balance;
+    //     while (b->setBalance(balance) == false)
+    //     {
+    //         cout << "you can't enter negative balance, please enter again : ";
+    //         cin >> balance;
+    //     }
+    //     c->setBankAccount(*b);
+    //     vecAccounts.push_back(b);
+    //     vecClients.push_back(c);
+    // }
+    // else if (accType == 2)
+    // {
+    //     s->setType("Saving");
+    //     s->setAccountID(accountID);
+    //     cout << "Please Enter the Starting Balance : ";
+    //     cin >> balance;
+    //     while (s->setBalance(balance) == false)
+    //     {
+    //         cout << "Your starting balance must be greater than the minimum balance" << endl;
+    //         cout << "The minimum balance is " << s->getMinimumBalance() << endl;
+    //         cout << "Please Enter the Starting Balance : ";
+    //         cin >> balance;
+    //     }
+    //     c->setBankAccount(*s);
+    //     vecAccounts.push_back(s);
+    //     vecClients.push_back(c);
+    // }
+    // else
+    // {
+    //     cout << "Invalid Type" << endl;
+    //     return false;
+    // }
+    // cout << "An account was created with ID " << vecAccounts[BankAcc::accountCount - 1]->getAccountID();
+    // cout << " and Starting Balance " << vecAccounts[BankAcc::accountCount - 1]->getBalance() << endl;
+    // return true;
+    cout << endl
+    << "Add client" << endl;
 }
 
 void BankApp::listClients()
