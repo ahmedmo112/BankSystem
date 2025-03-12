@@ -17,8 +17,8 @@ TEST_F(BankAccTest, DefaultConstructor) {
 
 // Test parameterized constructor
 TEST_F(BankAccTest, ParameterizedConstructor) {
-    BankAcc account(10.0);
-    EXPECT_EQ(account.getBalance(), 10.0);
+    BankAcc account(1000.0);
+    EXPECT_EQ(account.getBalance(), 1000.0);
 }
 
 // Test setAccountID and getAccountID
