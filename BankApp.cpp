@@ -77,6 +77,7 @@ string BankAcc::getType()
 Client *BankAcc::getClient()
 {
     string alo="dummy";
+    int age=20;
     return bankClient;
 }
 
