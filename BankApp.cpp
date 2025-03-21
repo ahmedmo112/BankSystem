@@ -375,7 +375,7 @@ void BankApp::deposit()
     << "Deposit done" << endl;
 }
 
-void BankApp::dummyBankApp()
+void BankApp::dummyBankApp(int a=0, int b=0, int c=0)
 {
     listClients();
 
