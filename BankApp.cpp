@@ -66,11 +66,17 @@ double BankAcc::getBalance()
 
 string BankAcc::getType()
 {
+    //new comment added
+    //new comment added
+    /*
+    new comment addeddddd
+    */
     return type;
 }
 
 Client *BankAcc::getClient()
 {
+    string alo="dummy";
     return bankClient;
 }
 
