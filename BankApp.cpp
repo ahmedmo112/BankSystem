@@ -187,15 +187,20 @@ void Client::setBankAccount(BankAcc &b)
 string Client::getName()
 {
     return name;
+    //new comment added
 }
 
 string Client::getAddress()
 {
+    int age=20;
     return address;
 }
 
 string Client::getPhone()
 {
+    string alo="dummy";
+    int age=20;
+    char c='a';
     return phone;
 }
 
@@ -371,7 +376,7 @@ void BankApp::dummyBankApp()
 
 
 
-    
+
 }
 
 void BankApp::run()
