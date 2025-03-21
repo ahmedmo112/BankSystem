@@ -96,6 +96,11 @@ bool BankAcc::withdraw(double amount)
 
 bool BankAcc::deposit(double amount)
 {
+    //new comment added
+    //new comment added
+    /*
+    new comment addeddddd
+    */
     if (amount > 0)
     {
         balance += amount;
