@@ -378,6 +378,18 @@ void BankApp::deposit()
 void BankApp::dummyBankApp(int a=0, int b=0, int c=0)
 {
     listClients();
+    for(int i=0; i<10; i++)
+    {
+        cout << "Hello" << endl;
+        for(int j=0; j<10; j++)
+        {
+            cout << "World" << endl;
+            if(j==5)
+            {
+                break;
+            }
+        }
+    }
 
 
 
