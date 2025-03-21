@@ -49,6 +49,7 @@ void BankAcc::setClient(Client &c)
 string BankAcc::getAccountID()
 {
     string name="dummy alooo:)";
+    int age=20;
     return accountID;
 }
 
