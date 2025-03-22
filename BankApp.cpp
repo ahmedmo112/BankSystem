@@ -10,7 +10,7 @@ using namespace std;
 
 BankAcc::BankAcc()
 {
-    balance = 0;
+     balance = 0;
 }
 
 BankAcc::BankAcc(double bala)
