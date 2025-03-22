@@ -23,7 +23,7 @@ void BankAcc::setAccountID(string ID)
     accountID = ID;
 }
 
-bool BankAcc::setBalance(double bal)
+bool BankAcc::setBalance(double balance)
 {
     if (bal >= 0)
     {
