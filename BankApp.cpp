@@ -49,19 +49,6 @@ void BankAcc::setClient(Client &c)
 string BankAcc::getAccountID()
 {
     string name="dummy alooo:)";
-    int age=20;
-    for(int i=0; i<10; i++)
-    {
-        cout << "Hello" << endl;
-        for(int j=0; j<10; j++)
-        {
-            cout << "World" << endl;
-            if(j==5)
-            {
-                break;
-            }
-        }
-    }
     return accountID;
 }
 
@@ -72,17 +59,11 @@ string BankAcc::getAccountID()
 
 double BankAcc::getBalance()
 {
-    //new comment added
     return balance;
 }
 
 string BankAcc::getType()
 {
-    //new comment added
-    //new comment added
-    /*
-    new comment addeddddd
-    */
     return type;
 }
 
