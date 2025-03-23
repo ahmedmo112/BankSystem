@@ -69,8 +69,6 @@ string BankAcc::getType()
 
 Client *BankAcc::getClient()
 {
-    string alo="dummy";
-    int age=20;
     return bankClient;
 }
 
@@ -180,7 +178,6 @@ void Client::setBankAccount(BankAcc &b)
 string Client::getName()
 {
     return name;
-    //new comment added
 }
 
 string Client::getAddress()
@@ -191,9 +188,6 @@ string Client::getAddress()
 
 string Client::getPhone()
 {
-    string alo="dummy";
-    int age=20;
-    char c='a';
     return phone;
 }
 
@@ -366,22 +360,6 @@ void BankApp::deposit()
 void BankApp::dummyBankApp(int a=0, int b=0, int c=0)
 {
     listClients();
-    for(int i=0; i<10; i++)
-    {
-        cout << "Hello" << endl;
-        for(int j=0; j<10; j++)
-        {
-            cout << "World" << endl;
-            if(j==5)
-            {
-                break;
-            }
-        }
-    }
-
-
-
-
 }
 
 void BankApp::run()
