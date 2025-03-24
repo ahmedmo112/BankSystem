@@ -32,9 +32,14 @@ jobs:
           ls -l /usr/lib/libgtest* || echo "GTest libraries not found in /usr/lib"
           ls -l /usr/include/gtest || echo "GTest headers not found"
 
-      - name: Compile with Clang
+      - name: Compile application code
         run: |
-          clang++ -std=c++14 -I/usr/include/gtest *.cpp -L/usr/lib -lgtest -lgtest_main -pthread -o test_executable -v
+          clang++ -std=c++14 -c BankApp.cpp -o BankApp.o -v
+        shell: bash
+
+      - name: Compile and link tests
+        run: |
+          clang++ -std=c++14 -I/usr/include/gtest test.cpp BankApp.o -L/usr/lib -lgtest -lgtest_main -pthread -o test_executable -v
         shell: bash
 
       - name: Run specific tests
