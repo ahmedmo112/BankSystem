@@ -24,14 +24,14 @@ jobs:
           sudo make
           sudo cp lib/*.a /usr/lib
 
-    #   - name: Compile with Clang
-    #     run: |
-    #         clang++ -std=c++14 -I/usr/include/gtest -lgtest -lgtest_main -pthread *.cpp -o test_executable
-    #         shell: bash
+      - name: Compile with Clang
+        run: |
+           clang++ -std=c++14 -I/usr/include/gtest -lgtest -lgtest_main -pthread *.cpp -o test_executable
+           shell: bash
     
         # Step 4: Run a specific test
       - name: Run specific test
         run: |
-            # ./test_executable --gtest_filter=MathTests.AddTest
+            ./test_executable --gtest_filter=MathTests.AddTest
             echo "Running specific test"
             echo ${{ github.event.inputs.test_names }}
