@@ -19,20 +19,22 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake g++ libgtest-dev jq
-          cd /usr/src/gtest
-          sudo cmake CMakeLists.txt
+          cd /usr/src/googletest
+          sudo mkdir -p build
+          cd build
+          sudo cmake ..
           sudo make
-          sudo cp lib/*.a /usr/lib || sudo cp /usr/src/gtest/lib/*.a /usr/lib
+          sudo cp lib/*.a /usr/lib
 
       - name: Debug environment
         run: |
           ls -la
-          ls -l /usr/lib/libgtest*
-          ls -l /usr/include/gtest
+          ls -l /usr/lib/libgtest* || echo "GTest libraries not found in /usr/lib"
+          ls -l /usr/include/gtest || echo "GTest headers not found"
 
       - name: Compile with Clang
         run: |
-          clang++ -std=c++14 -I/usr/include/gtest -L/usr/lib -lgtest -lgtest_main -pthread *.cpp -o test_executable -v
+          clang++ -std=c++14 -I/usr/include/gtest *.cpp -L/usr/lib -lgtest -lgtest_main -pthread -o test_executable -v
         shell: bash
 
       - name: Run specific tests
