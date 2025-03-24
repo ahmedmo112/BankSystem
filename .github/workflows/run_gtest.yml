@@ -22,16 +22,21 @@ jobs:
           cd /usr/src/gtest
           sudo cmake CMakeLists.txt
           sudo make
-          sudo cp lib/*.a /usr/lib
+          sudo cp lib/*.a /usr/lib || sudo cp /usr/src/gtest/lib/*.a /usr/lib
+
+      - name: Debug environment
+        run: |
+          ls -la
+          ls -l /usr/lib/libgtest*
+          ls -l /usr/include/gtest
 
       - name: Compile with Clang
         run: |
-          clang++ -std=c++14 -I/usr/include/gtest -lgtest -lgtest_main -pthread *.cpp -o test_executable
+          clang++ -std=c++14 -I/usr/include/gtest -L/usr/lib -lgtest -lgtest_main -pthread *.cpp -o test_executable -v
         shell: bash
 
       - name: Run specific tests
         run: |
-          # Parse the JSON array input and convert it to a colon-separated list for gtest_filter
           TEST_FILTER=$(echo '${{ github.event.inputs.test_names }}' | jq -r 'join(":")')
           if [ -z "$TEST_FILTER" ] || [ "$TEST_FILTER" = "[]" ]; then
             echo "No specific tests provided, running all tests"
