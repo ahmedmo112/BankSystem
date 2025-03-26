@@ -413,9 +413,5 @@ void BankApp::run()
                 }
             }
         }
-        else
-        {
-            ;
-        }
     }
 }
