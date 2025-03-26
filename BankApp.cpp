@@ -405,12 +405,6 @@ void BankApp::run()
     {
         if(true){
             if(false){
-                if(true){
-                    if(false)
-                    {
-                        ;
-                    }
-                }
             }
         }
     }
