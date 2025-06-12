@@ -18,9 +18,9 @@ BankAcc::BankAcc(double bala)
     balance = bala;
 }
 
-void BankAcc::setAccountID(string ID)
+void BankAcc::setAccountID(string Id)
 {
-    accountID = ID;
+    accountID = Id;
 }
 
 bool BankAcc::setBalance(double bal)
