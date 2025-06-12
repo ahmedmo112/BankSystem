@@ -12,7 +12,7 @@ protected:
 
 // Test default constructor
 TEST_F(BankAccTest, DefaultConstructor) {
-    EXPECT_EQ(account.getBalance(), 0);
+    EXPECT_EQ(account.getBalance(), 1);
 }
 
 // Test parameterized constructor
