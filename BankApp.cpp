@@ -13,9 +13,9 @@ BankAcc::BankAcc()
     balance = 0;
 }
 
-BankAcc::BankAcc(double bala)
+BankAcc::BankAcc(double balac)
 {
-    balance = bala;
+    balance = balac;
 }
 
 void BankAcc::setAccountID(string Id)
