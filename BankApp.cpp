@@ -13,14 +13,14 @@ BankAcc::BankAcc()
     balance = 0;
 }
 
-BankAcc::BankAcc(double bal)
+BankAcc::BankAcc(double bala)
 {
-    balance = bal;
+    balance = bala;
 }
 
-void BankAcc::setAccountID(string ID)
+void BankAcc::setAccountID(string Id)
 {
-    accountID = ID;
+    accountID = Id;
 }
 
 bool BankAcc::setBalance(double bal)
@@ -48,7 +48,7 @@ void BankAcc::setClient(Client &c)
 
 string BankAcc::getAccountID()
 {
-    string name="dummy :)";
+    string name="dummy :))-";
     return accountID;
 }
 
