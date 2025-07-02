@@ -23,11 +23,11 @@ void BankAcc::setAccountID(string ID)
     accountID = ID;
 }
 
-bool BankAcc::setBalance(double bal)
+bool BankAcc::setBalance(double balanc)
 {
-    if (bal >= 0)
+    if (balanc >= 0)
     {
-        balance = bal;
+        balance = balanc;
         return true;
     }
     else
@@ -48,7 +48,7 @@ void BankAcc::setClient(Client &c)
 
 string BankAcc::getAccountID()
 {
-    string name="dummy :)";
+    string name="dummy";
     return accountID;
 }
 
@@ -114,11 +114,11 @@ double SavingsBankAcc::getMinimumBalance()
     return minimumBalance;
 }
 
-bool SavingsBankAcc::setBalance(double bal)
+bool SavingsBankAcc::setBalance(double balanc)
 {
-    if (bal >= minimumBalance)
+    if (balanc >= minimumBalance)
     {
-        balance = bal;
+        balance = balanc;
         return true;
     }
     else
@@ -166,9 +166,9 @@ void Client::setAddress(string a)
     address = a;
 }
 
-void Client::setPhone(string p)
+void Client::setPhone(string ph)
 {
-    phone = p;
+    phone = ph;
 }
 
 void Client::setBankAccount(BankAcc &b)
